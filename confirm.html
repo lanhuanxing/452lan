@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Order - Merlin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logo.css">
+</head>
+<body onload="loadOrder()">
+    <nav id="navbar">
+        <div class="logo-container">
+            <img src="merlin.png" alt="Merlin Logo" class="logo-img">
+            <a href="index.html" class="logo-text">Merlin</a>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="auth.html">Login/Register</a>
+        <a href="cart.html">Cart</a>
+        <a href="confirm.html">Confirm</a>
+        <a href="order-history.html">Order History</a>
+        <a href="logout.html">Logout</a>
+        <span id="userStatus" style="float: right; color: white;"></span>
+    </nav>
+
+    <main>
+        <h2>Order Summary</h2>
+        <div id="orderSummary"></div>
+        <button onclick="confirmOrder()">Confirm Order</button>
+        <button onclick="location.href='cart.html'">Edit Cart</button>
+    </main>
+
+    <footer>
+        <p>@ 2023 Merlin. All rights reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

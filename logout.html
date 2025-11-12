@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logout - Merlin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logo.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo-container">
+            <img src="merlin.png" alt="Merlin Logo" class="logo-img">
+            <a href="index.html" class="logo-text">Merlin</a>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="auth.html">Login/Register</a>
+        <a href="cart.html">Cart</a>
+        <a href="confirm.html">Confirm</a>
+        <a href="order-history.html">Order History</a>
+        <a href="logout.html">Logout</a>
+    </nav>
+
+    <main>
+        <h2>Logging out...</h2>
+        <p>You will be redirected to homepage in <span id="countdown">2</span> seconds</p>
+        <p>Your order history has been downloaded</p>
+    </main>
+
+    <footer>
+        <p>@ 2023 Merlin. All rights reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        handleLogout();
+    </script>
+</body>
+</html>

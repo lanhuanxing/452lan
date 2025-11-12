@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order History - Merlin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logo.css">
+    <style>
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .download-order-btn {
+            background-color: #007bff;
+            padding: 5px 10px;
+            font-size: 0.9em;
+        }
+        
+        .download-order-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        #downloadAllBtn {
+            margin-top: 20px;
+            background-color: #28a745;
+        }
+        
+        #downloadAllBtn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body onload="loadOrderHistory()">
+    <nav id="navbar">
+        <div class="logo-container">
+            <img src="merlin.png" alt="Merlin Logo" class="logo-img">
+            <a href="index.html" class="logo-text">Merlin</a>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="auth.html">Login/Register</a>
+        <a href="cart.html">Cart</a>
+        <a href="confirm.html">Confirm</a>
+        <a href="order-history.html">Order History</a>
+        <a href="logout.html">Logout</a>
+        <span id="userStatus" style="float: right; color: white;"></span>
+    </nav>
+
+    <main>
+        <h2>Your Order History</h2>
+        <div id="orderHistory" class="order-history"></div>
+        <button id="downloadAllBtn" onclick="orders.downloadAllOrders()">Download All Orders</button>
+    </main>
+
+    <footer>
+        <p>@ 2023 Merlin. All rights reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

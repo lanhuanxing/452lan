@@ -1,13 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <title>Merlin Resource Store - Premium Learning Resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .about-section {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .about-title {
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .about-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #007bff, #28a745);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            text-align: left;
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+        }
+
+        .feature h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.95em;
+            margin: 0;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 40px;
+            color: white;
+            text-align: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-image h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .about-image p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .auth-btn {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .auth-btn.primary {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+        }
+
+        .auth-btn.secondary {
+            background: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #28a745;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-section {
+                padding: 30px 20px;
+            }
+            
+            .about-title {
+                font-size: 2.2em;
+            }
+            
+            .auth-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .auth-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-<H1>This is my first webpage</H1>
-  <h2> my name is Merlin </h2>
-    <img src="Merlin.jpg" alt="Italian Trulli">
+    <nav id="navbar">
+        <div class="logo-container">
+            <img src="merlin.png" alt="Merlin Logo" class="logo-img">
+            <a href="index.html" class="logo-text">Merlin</a>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="auth.html">Login/Register</a>
+        <a href="cart.html">Cart</a>
+        <a href="confirm.html">Confirm</a>
+        <a href="order-history.html">Order History</a>
+        <a href="logout.html">Logout</a>
+        <span id="userStatus" style="float: right; color: white;"></span>
+    </nav>
+
+    <header class="banner">
+        <h1>Merlin's Resource Store</h1>
+        <p>Your Gateway to Premium Learning Resources and Course Packages</p>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h2 class="about-title">About Merlin's Resource Store</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to <strong>Merlin's Resource Store</strong>, your premier destination for high-quality learning materials and educational resources. We are dedicated to empowering students, professionals, and lifelong learners with comprehensive course packages that deliver real value.</p>
+                    
+                    <p>Our carefully curated resource packs are designed by industry experts and experienced educators to provide you with the knowledge and skills needed to excel in today's competitive landscape.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <h4>Expert-Created Content</h4>
+                            <p>All resources are developed by professionals with years of industry experience.</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Structured Learning</h4>
+                            <p>Follow organized learning paths with clear objectives and outcomes.</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Practical Skills</h4>
+                            <p>Focus on real-world applications and practical knowledge you can use immediately.</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Lifetime Access</h4>
+                            <p>One-time purchase gives you lifetime access to all updates and materials.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <h3>Start Your Learning Journey Today</h3>
+                    <p>Join thousands of satisfied learners who have transformed their careers with our premium resource packages.</p>
+                </div>
+            </div>
+            
+            <div class="auth-buttons">
+                <a href="auth.html" class="auth-btn primary">Get Started - Login/Register</a>
+                <a href="#resources" class="auth-btn secondary">Browse Resources</a>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Transform Your Skills?</h2>
+            <p>Browse our premium resource packages and start your learning journey today. Login or register to get full access to our catalog.</p>
+            <a href="auth.html" class="cta-button">Explore Resources</a>
+        </section>
+
+        <h2 id="resources">Premium Resource Packages</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px; font-size: 1.1em;">
+            Browse our collection of expertly crafted learning resources. Login to purchase and start learning today.
+        </p>
+        <div id="productList" class="product-grid home-products"></div>
+    </main>
+
+    <footer>
+        <p>@ 2023 Merlin. All rights reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // 加载产品到首页
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProductsForHome();
+        });
+    </script>
 </body>
 </html>

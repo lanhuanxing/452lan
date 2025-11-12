@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart - Merlin Resource Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="logo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="loadCart()">
+    <nav id="navbar">
+        <div class="logo-container">
+            <img src="merlin.png" alt="Merlin Logo" class="logo-img">
+            <a href="index.html" class="logo-text">Merlin</a>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="auth.html">Login/Register</a>
+        <a href="cart.html">Cart</a>
+        <a href="confirm.html">Confirm</a>
+        <a href="order-history.html">Order History</a>
+        <a href="logout.html">Logout</a>
+        <span id="userStatus" style="float: right; color: white;"></span>
+    </nav>
+
+    <main>
+        <h2>Resource Packs</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">
+            Browse our premium resource packages and add them to your cart.
+        </p>
+        <div id="productList" class="product-grid cart-products"></div>
+
+        <h2>My Cart</h2>
+        <div id="cartItems" class="cart-list"></div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="location.href='confirm.html'" style="padding: 15px 30px; font-size: 1.1em;">Proceed to Checkout</button>
+            <button onclick="location.href='index.html'" style="padding: 15px 30px; font-size: 1.1em; background: #6c757d;">Continue Shopping</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>@ 2023 Merlin. All rights reserved</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
